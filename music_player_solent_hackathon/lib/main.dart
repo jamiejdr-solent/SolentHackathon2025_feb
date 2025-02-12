@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:music_player_solent_hackathon/home.dart';
+import 'package:music_player_solent_hackathon/objects/player.dart';
+
+Player player = Player();
 
 void main() {
   runApp(const MyApp());
