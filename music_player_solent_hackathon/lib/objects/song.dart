@@ -1,6 +1,11 @@
 class Song {
-  String title = "Placeholder Title";
-  String author = "Placeholder Author";
+  String title;
+  String author;
   int duration = 1;
   String uri = "Placeholder URI";
+
+  Song({
+    this.title = "Placeholder Title",
+    this.author = "Placeholder Author",
+  });
 }
