@@ -28,7 +28,13 @@ class Player {
 
   playForce() {
     song = _popSong();
-    player.play(UrlSource(song!.uri));
+    if (song == null) return;
+    String uri = song!.uri;
+    if (Uri.tryParse(uri) == null) {
+      player.play(UrlSource(uri));
+    } else {
+      player.play(DeviceFileSource(uri));
+    }
   }
 
   play() {
@@ -44,11 +50,21 @@ class Player {
   resume() {
     player.resume();
   }
-  // next() {
-  //   player.stop();
-  //   _ptr += 1;
 
-  // }
+  next() {
+    player.stop();
+    if (_ptr < playlist.songs.length && song == playlist.songs[_ptr]) {
+      _ptr += 1;
+    }
+    play();
+  }
+
+  prev() {
+    player.stop();
+    _ptr -= 1;
+    play();
+  }
+
   Player() {
     player.onPlayerStateChanged.listen((_) {
       switch (player.state) {
