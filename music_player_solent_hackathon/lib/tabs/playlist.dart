@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player_solent_hackathon/objects/playlist.dart';
+import 'package:music_player_solent_hackathon/objects/song.dart';
 import 'package:music_player_solent_hackathon/playlist_view.dart';
 
 class PlaylistTab extends StatefulWidget {
@@ -19,26 +20,43 @@ class _PlaylistTabState extends State<PlaylistTab> {
     Playlist(name: "Big funky", description: "the greatest"),
     Playlist(name: "playlist whoo", description: "omg its a playlist"),
     Playlist(
-        name: "taylor swifts biggest hits", description: "Best playlist yet"),
+        name: "taylor swifts biggest hits",
+        description: "Best playlist yet",
+        songs: [Song(), Song(), Song()]),
   ];
 
   @override
   Widget build(BuildContext context) {
     return !viewAll
-        ? PlaylistDetail(playlist: currentPlaylist)
+        ? Scaffold(
+            appBar: AppBar(
+              title: Text(currentPlaylist.name),
+              centerTitle: true,
+              leading: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      viewAll = true;
+                    });
+                  },
+                  icon: Icon(Icons.arrow_back)),
+            ),
+            body: PlaylistDetail(playlist: currentPlaylist),
+          )
         : ListView(
             children: [
               for (Playlist playlist in playlists)
-                ListTile(
-                  leading: Icon(Icons.music_note),
-                  title: Text(playlist.name),
-                  subtitle: Text(playlist.description),
-                  onTap: () {
-                    setState(() {
-                      currentPlaylist = playlist;
-                      viewAll = false;
-                    });
-                  }, // TODO: view the playlist information
+                Card(
+                  child: ListTile(
+                    leading: Icon(Icons.music_note),
+                    title: Text(playlist.name),
+                    subtitle: Text(playlist.description),
+                    onTap: () {
+                      setState(() {
+                        currentPlaylist = playlist;
+                        viewAll = false;
+                      });
+                    }, // TODO: view the playlist information
+                  ),
                 )
             ],
           );

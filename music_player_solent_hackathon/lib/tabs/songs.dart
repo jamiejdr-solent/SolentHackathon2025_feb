@@ -19,11 +19,13 @@ class _SongsTabState extends State<SongsTab> {
     return ListView(
       children: [
         for (Song song in songs)
-          ListTile(
-            leading: Icon(Icons.music_note),
-            title: Text(song.title),
-            subtitle: Text(song.author),
-            onTap: () {}, // TODO: make this play the song
+          Card(
+            child: ListTile(
+              leading: Icon(Icons.music_note),
+              title: Text(song.title),
+              subtitle: Text(song.author),
+              onTap: () {}, // TODO: make this play the song
+            ),
           )
       ],
     );

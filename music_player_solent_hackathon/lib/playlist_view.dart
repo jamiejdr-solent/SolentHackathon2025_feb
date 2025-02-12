@@ -16,14 +16,22 @@ class _PlaylistDetailState extends State<PlaylistDetail> {
     return ListView(
       children: [
         Icon(Icons.music_note, size: 64.0), // TODO: replace with thumbnail
-        Text(widget.playlist.name),
-        Text(widget.playlist.description),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(widget.playlist.description),
+            IconButton(
+                onPressed: () {}, //TODO: make this play playlist
+                icon: Icon(Icons.play_circle))
+          ],
+        ),
         for (Song song in widget.playlist.songs)
           Card(
             child: ListTile(
               leading: Icon(Icons.music_note),
               title: Text(song.title),
               subtitle: Text(song.author),
+              onTap: () {},
             ),
           )
       ],
