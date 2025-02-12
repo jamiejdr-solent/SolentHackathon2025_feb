@@ -1,9 +1,11 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:music_player_solent_hackathon/tabs/homepage.dart';
 import 'package:music_player_solent_hackathon/tabs/import.dart';
 import 'package:music_player_solent_hackathon/tabs/playlist.dart';
 import 'package:music_player_solent_hackathon/tabs/songs.dart';
 import 'package:music_player_solent_hackathon/tabs/stats.dart';
+import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -38,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    AudioPlayer audioplayer = context.watch<AudioPlayer>();
     return DefaultTabController(
         length: 5,
         child: Scaffold(

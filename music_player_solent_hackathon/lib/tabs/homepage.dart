@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -9,14 +10,13 @@ class HomeTab extends StatefulWidget {
 }
 
 class _HomeTabState extends State<HomeTab> {
-  AudioPlayer audio = AudioPlayer();
-
   @override
   Widget build(BuildContext context) {
+    AudioPlayer audioplayer = context.watch<AudioPlayer>();
     return Center(
       child: IconButton(
           onPressed: () async {
-            await audio.play(
+            await audioplayer.play(
                 DeviceFileSource("C:\\Users\\Stran\\Downloads\\sample-3s.mp3"));
           },
           icon: Icon(Icons.play_arrow)),
