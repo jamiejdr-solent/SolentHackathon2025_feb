@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player_solent_hackathon/songbar.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -11,7 +12,7 @@ class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("Home page goes here"),
+      child: SongBar()
     );
   }
 }

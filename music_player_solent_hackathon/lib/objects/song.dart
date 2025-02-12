@@ -3,4 +3,5 @@ class Song {
   String author = "Placeholder Author";
   int duration = 1;
   String uri = "Placeholder URI";
+  Stream<void> update = Stream();
 }
