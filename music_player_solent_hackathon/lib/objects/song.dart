@@ -1,7 +1,13 @@
+import 'package:flutter/foundation.dart';
+
 class Song {
-  String title = "Placeholder Title";
-  String author = "Placeholder Author";
+  final ValueNotifier<bool> needsUpdate = ValueNotifier(false);
+  String title;
+  String author;
   int duration = 1;
   String uri = "Placeholder URI";
-  Stream<void> update = Stream();
+  Song({
+    this.title = "Placeholder Title",
+    this.author = "Placeholder Author",
+  });
 }
