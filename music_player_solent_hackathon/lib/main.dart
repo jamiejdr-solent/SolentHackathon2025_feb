@@ -1,6 +1,6 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:music_player_solent_hackathon/home.dart';
+import 'package:music_player_solent_hackathon/objects/player.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    AudioPlayer audioplayer = AudioPlayer();
+    Player player = Player();
 
     return MaterialApp(
         title: 'Music App',
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: Provider.value(
-          value: audioplayer,
+          value: player,
           child: const MyHomePage(),
         ));
   }

@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:music_player_solent_hackathon/mediabar.dart';
+import 'package:music_player_solent_hackathon/objects/player.dart';
 import 'package:music_player_solent_hackathon/tabs/homepage.dart';
 import 'package:music_player_solent_hackathon/tabs/import.dart';
 import 'package:music_player_solent_hackathon/tabs/playlist.dart';
@@ -41,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    AudioPlayer audioplayer = context.watch<AudioPlayer>();
+    Player player = context.watch<Player>();
     return DefaultTabController(
         length: 5,
         child: Scaffold(
