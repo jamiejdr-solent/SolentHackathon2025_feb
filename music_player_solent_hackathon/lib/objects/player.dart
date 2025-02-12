@@ -1,14 +1,8 @@
-import 'dart:math';
-
 import 'package:audioplayers/audioplayers.dart';
 import 'package:music_player_solent_hackathon/objects/playlist.dart';
 import 'package:music_player_solent_hackathon/objects/song.dart';
 
-enum RepeatMode {
-  repeatNone,
-  repeatSingle,
-  repeatPlaylist
-}
+enum RepeatMode { repeatNone, repeatSingle, repeatPlaylist }
 
 class Player {
   AudioPlayer player = AudioPlayer();
@@ -20,7 +14,6 @@ class Player {
   bool shuffle = false; // TODO implement shuffle
   int _ptr = 0;
   _popSong() {
-    if (playlist.songs.isEmpty) return;
     if (_ptr < 0) _ptr = 0;
     if (_ptr >= playlist.songs.length) {
       if (repeatMode != RepeatMode.repeatPlaylist) return;
@@ -32,25 +25,29 @@ class Player {
       return playlist.songs.removeAt(_ptr);
     }
   }
+
   playForce() {
     song = _popSong();
     player.play(UrlSource(song!.uri));
   }
+
   play() {
     if (playing) return;
     if (_ptr >= playlist.songs.length) _ptr = 0;
     playForce();
   }
+
   pause() {
     player.pause();
   }
+
   resume() {
     player.resume();
   }
   // next() {
   //   player.stop();
   //   _ptr += 1;
-    
+
   // }
   Player() {
     player.onPlayerStateChanged.listen((_) {

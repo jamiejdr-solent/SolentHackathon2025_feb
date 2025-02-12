@@ -5,7 +5,7 @@ import 'package:music_player_solent_hackathon/objects/song.dart';
 
 class Playlist {
   final ValueNotifier<bool> needsUpdate = ValueNotifier(false);
-  List<Song> songs = [];
+  List<Song> songs;
   String thumbnailUri = "Placeholder Thumbnail";
   String description = "Placeholder Description";
   String name = "Placeholder Name";
@@ -26,7 +26,9 @@ class Playlist {
       final files = directory.listSync();
       for (var file in files) {
         if (file is File && _isAudioFile(file.path)) {
-          Song song = Song();
+          Song song = Song(
+              title: "demo",
+              uri: "https://download.samplelib.com/mp3/sample-3s.mp3");
           song.uri = file.path;
           playlist.songs.add(song);
         }

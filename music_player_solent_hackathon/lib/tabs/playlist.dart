@@ -22,7 +22,11 @@ class _PlaylistTabState extends State<PlaylistTab> {
     Playlist(
         name: "taylor swifts biggest hits",
         description: "Best playlist yet",
-        songs: [Song(), Song(), Song()]),
+        songs: [
+          Song(uri: "https://download.samplelib.com/mp3/sample-3s.mp3"),
+          Song(uri: "https://download.samplelib.com/mp3/sample-3s.mp3"),
+          Song(uri: "https://download.samplelib.com/mp3/sample-3s.mp3")
+        ]),
   ];
 
   @override
