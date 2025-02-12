@@ -34,7 +34,12 @@ class Player {
   }
   playForce() {
     song = _popSong();
-    player.play(UrlSource(song!.uri));
+    String uri = song!.uri;
+    if (Uri.tryParse(uri) == null) {
+      player.play(UrlSource(uri));
+    } else {
+      player.play(DeviceFileSource(uri));
+    }
   }
   play() {
     if (playing) return;
