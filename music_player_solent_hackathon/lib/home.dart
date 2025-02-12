@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:music_player_solent_hackathon/tabs/homepage.dart';
+import 'package:music_player_solent_hackathon/tabs/import.dart';
+import 'package:music_player_solent_hackathon/tabs/playlist.dart';
+import 'package:music_player_solent_hackathon/tabs/songs.dart';
+import 'package:music_player_solent_hackathon/tabs/stats.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -47,9 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ]),
           ),
-          body: ListView(
-            children: [Placeholder()],
-          ),
+          body: TabBarView(children: [
+            SongsTab(),
+            PlaylistTab(),
+            HomeTab(),
+            StatsTab(),
+            ImportTab(),
+          ]),
         ));
   }
 }
