@@ -1,0 +1,22 @@
+play songs locally
+playlists
+browse songs on device
+
+
+
+
+Song controls
+	play
+	pause
+	stop
+	volume
+
+Pages
+	current playing song
+		controls and song
+	browse songs
+	browse playlists
+	view playlists
+	create new playlist
+	store metadata about songs
+		source/modified/plays
