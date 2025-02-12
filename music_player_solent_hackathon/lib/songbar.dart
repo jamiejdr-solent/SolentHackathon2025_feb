@@ -8,7 +8,7 @@ class SongBarPlayButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<ProcessingState>(
-      stream: player.processingStateStream,
+      stream: player.audioPlayer.processingStateStream,
       builder: (context, processingSnapshot) {
         final processingState = processingSnapshot.data;
 
@@ -19,8 +19,8 @@ class SongBarPlayButton extends StatelessWidget {
         }
 
         return StreamBuilder<bool>(
-          stream: player.playingStream,
-          initialData: player.playing,
+          stream: player.audioPlayer.playingStream,
+          initialData: player.audioPlayer.playing,
           builder: (context, playingSnapshot) {
             final isPlaying = playingSnapshot.data ?? false;
 
