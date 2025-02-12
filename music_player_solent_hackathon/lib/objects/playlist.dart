@@ -8,15 +8,10 @@ class Playlist {
   String description = "Placeholder Description";
   String name = "Placeholder Name";
 
-  populate() {
-    Song song = Song();
-    song.uri =
-        "https://freetestdata.com/wp-content/uploads/2021/09/Free_Test_Data_500KB_MP3.mp3";
-    songs.add(song);
-  }
-
   Playlist({
     this.name = "",
     this.description = "",
-  });
+  }) {
+    needsUpdate.value = true;
+  }
 }
