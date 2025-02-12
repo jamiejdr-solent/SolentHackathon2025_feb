@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:music_player_solent_hackathon/mediabar.dart';
 import 'package:music_player_solent_hackathon/tabs/homepage.dart';
 import 'package:music_player_solent_hackathon/tabs/import.dart';
 import 'package:music_player_solent_hackathon/tabs/playlist.dart';
@@ -44,40 +45,39 @@ class _MyHomePageState extends State<MyHomePage> {
     return DefaultTabController(
         length: 5,
         child: Scaffold(
-          appBar: AppBar(
-            automaticallyImplyLeading: false,
-            bottom: TabBar(
-                // controller: _tabController,
-                tabs: [
-                  Tab(
-                    icon: Icon(Icons.audio_file),
-                    text: "Songs",
-                  ),
-                  Tab(
-                    icon: Icon(Icons.library_music),
-                    text: "Playlists",
-                  ),
-                  Tab(
-                    icon: Icon(Icons.home),
-                    text: "Home",
-                  ),
-                  Tab(
-                    icon: Icon(Icons.auto_graph),
-                    text: "Stats",
-                  ),
-                  Tab(
-                    icon: Icon(Icons.access_alarm),
-                    text: "Import",
-                  ),
-                ]),
-          ),
-          body: TabBarView(children: [
-            SongsTab(),
-            PlaylistTab(),
-            HomeTab(),
-            StatsTab(),
-            ImportTab(),
-          ]),
-        ));
+            appBar: AppBar(
+              automaticallyImplyLeading: false,
+              bottom: TabBar(
+                  // controller: _tabController,
+                  tabs: [
+                    Tab(
+                      icon: Icon(Icons.audio_file),
+                      text: "Songs",
+                    ),
+                    Tab(
+                      icon: Icon(Icons.library_music),
+                      text: "Playlists",
+                    ),
+                    Tab(
+                      icon: Icon(Icons.home),
+                      text: "Home",
+                    ),
+                    Tab(
+                      icon: Icon(Icons.auto_graph),
+                      text: "Stats",
+                    ),
+                    Tab(
+                      icon: Icon(Icons.access_alarm),
+                      text: "Import",
+                    ),
+                  ]),
+            ),
+            body: TabBarView(children: [
+              SongsTab(),
+              PlaylistTab(),
+              HomeTab(),
+              StatsTab(),
+              ImportTab(),
+            ])));
   }
 }
