@@ -22,6 +22,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // late TabController _tabController;
+
+  // @override
+  // void initState() {
+  //   _tabController = TabController(length: 3, vsync: );
+  //   super.initState();
+  // }
+
+  // @override
+  // void dispose() {
+  //   _tabController.dispose();
+  //   super.dispose();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -29,28 +43,30 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            bottom: const TabBar(tabs: [
-              Tab(
-                icon: Icon(Icons.audio_file),
-                text: "Songs",
-              ),
-              Tab(
-                icon: Icon(Icons.library_music),
-                text: "Playlists",
-              ),
-              Tab(
-                icon: Icon(Icons.home),
-                text: "Home",
-              ),
-              Tab(
-                icon: Icon(Icons.auto_graph),
-                text: "Stats",
-              ),
-              Tab(
-                icon: Icon(Icons.access_alarm),
-                text: "Import",
-              ),
-            ]),
+            bottom: TabBar(
+                // controller: _tabController,
+                tabs: [
+                  Tab(
+                    icon: Icon(Icons.audio_file),
+                    text: "Songs",
+                  ),
+                  Tab(
+                    icon: Icon(Icons.library_music),
+                    text: "Playlists",
+                  ),
+                  Tab(
+                    icon: Icon(Icons.home),
+                    text: "Home",
+                  ),
+                  Tab(
+                    icon: Icon(Icons.auto_graph),
+                    text: "Stats",
+                  ),
+                  Tab(
+                    icon: Icon(Icons.access_alarm),
+                    text: "Import",
+                  ),
+                ]),
           ),
           body: TabBarView(children: [
             SongsTab(),

@@ -38,6 +38,7 @@ class Playlist {
 
   static Future<Playlist?> fromFolderUser() async {
     String? selectedDirectory = await FilePicker.platform.getDirectoryPath();
+    if (selectedDirectory == null) return null;
     return fromFolder(selectedDirectory);
   }
 
