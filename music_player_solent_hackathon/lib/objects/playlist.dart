@@ -11,6 +11,7 @@ class Playlist {
   Playlist({
     this.name = "",
     this.description = "",
+    this.songs = const [],
   }) {
     needsUpdate.value = true;
   }
