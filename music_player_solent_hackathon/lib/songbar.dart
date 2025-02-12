@@ -3,8 +3,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:music_player_solent_hackathon/objects/player.dart';
 
 class SongBarPlayButton extends StatelessWidget {
-  Player player;
-  const SongBarPlayButton({super.key, required this.player})
+  const SongBarPlayButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,5 +43,9 @@ class SongBarPlayButton extends StatelessWidget {
 }
 
 class SongBar extends StatelessWidget {
+  const SongBar({super.key});
   @override
+  Widget build(BuildContext context) {
+    return const SongBarPlayButton();
+  }
 }
