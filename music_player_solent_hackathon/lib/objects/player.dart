@@ -1,16 +1,11 @@
 import 'package:just_audio/just_audio.dart';
 import 'package:music_player_solent_hackathon/objects/song.dart';
 
-class Player {
+class Player extends AudioPlayer {
   List<Song> songs = [];
-  AudioPlayer player = AudioPlayer();
-  play() {
-    player.play();
-  }
-  pause() {
-    player.play();
-  }
-  playing() {
-    return player.playing;
+  Player() {
+    
   }
 }
+
+Player player = Player();
